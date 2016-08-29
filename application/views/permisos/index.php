@@ -43,9 +43,9 @@
 			//  comparar los valores de aqui. con el ID de Perfil para conseguir la data correcta. 
 			// con esto continua en si para avanzar en los de mas  
 			// titulo con misma forma en pulir. 	
-				foreach ($mePerfil as $val) {
+				
 					
-					if(  $value->idModulo==$val->idModulo ){
+					
 				//	if ($limit>0 ) continue;
 				?>
 					<tr>
@@ -58,9 +58,26 @@
 						<td>
 							<?=$value->url?>
 						</td>
+
+					<?php
+						foreach ($mePerfil as $val) {
+						if(  $value->idModulo==$val->idModulo && $val->permisos=='1' ){
+					?>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='1')?"checked":"")  ?> value="<?=$value->idModulo ?>_1"> 
+							 <input type="checkbox" id="" name="permis[]" checked value="<?=$value->idModulo ?>_1"> 
 						</td>
+
+						<?php
+						continue;
+						 }else{
+						 	?>
+						<td class="text-center">
+							 <input type="checkbox" id="" name="permis[]"  value="<?=$value->idModulo ?>_1"> 
+						</td>
+						<?
+						continue;
+						 }
+						?>
 						<td class="text-center">
 							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='2')?"checked":"")  ?> value="<?=$value->idModulo ?>_2"> 
 						</td>
@@ -73,7 +90,7 @@
 
 					</tr>
 			<?php 
-			}
+			
 		}
 		$limit = 0;
 		// eso
