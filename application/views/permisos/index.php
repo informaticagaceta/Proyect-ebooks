@@ -37,7 +37,7 @@
 			foreach ($allModulos as $value) {
 				$cont++;
 
-				// vemos y compramos los permisos 
+			// vemos y compramos los permisos 
 			//	foreach ($verPermisos as $ve) {
 			//  comparar los valores de aqui. con el ID de Perfil para conseguir la data correcta. 
 			// con esto continua en si para avanzar en los de mas  
@@ -71,33 +71,8 @@
 
 					</tr>
 			<?php }
-			// revisar esto para el coding
-			}else{  ?>
-					<tr>
-						<td>
-							<?=$cont?>
-						</td>
-						<td>
-							<?=$value->nombre?>
-						</td>
-						<td>
-							<?=$value->url?>
-						</td>
-						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_1"> 
-						</td>
-						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_2"> 
-						</td>
-						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_3"> 
-						</td>
-						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]"  value="<?=$value->idModulo ?>_4"> 
-						</td>
+			
 
-					</tr>				
-		<?php	}
 			?>
 
 				</tbody>
