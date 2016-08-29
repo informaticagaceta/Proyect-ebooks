@@ -34,6 +34,7 @@
 				<tbody>
 			<?php 
 			$cont = 0;
+			$limit = 0;
 			foreach ($allModulos as $value) {
 				$cont++;
 
@@ -43,8 +44,9 @@
 			// con esto continua en si para avanzar en los de mas  
 			// titulo con misma forma en pulir. 	
 				foreach ($mePerfil as $val) {
-
-				//	if(  ($value->idModulo == $ve->idModulo ) and ($perfilMe == $ve->idRol) ){
+					
+					if(  $value->idModulo==$val->idModulo ){
+				//	if ($limit>0 ) continue;
 				?>
 					<tr>
 						<td>
@@ -57,21 +59,25 @@
 							<?=$value->url?>
 						</td>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_1"> 
+							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='1')?"checked":"")  ?> value="<?=$value->idModulo ?>_1"> 
 						</td>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_2"> 
+							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='2')?"checked":"")  ?> value="<?=$value->idModulo ?>_2"> 
 						</td>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" value="<?=$value->idModulo ?>_3"> 
+							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='3')?"checked":"")  ?> value="<?=$value->idModulo ?>_3"> 
 						</td>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]"  value="<?=$value->idModulo ?>_4"> 
+							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='4')?"checked":"")  ?> value="<?=$value->idModulo ?>_4"> 
 						</td>
 
 					</tr>
-			<?php }
-			
+			<?php 
+			}
+		}
+		$limit = 0;
+		// eso
+			}
 
 			?>
 
