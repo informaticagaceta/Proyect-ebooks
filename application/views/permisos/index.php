@@ -59,40 +59,47 @@
 							<?=$value->url?>
 						</td>
 
-					<?php
+					<?
 						foreach ($mePerfil as $val) {
-						if(  $value->idModulo==$val->idModulo && $val->permisos=='1' ){
+						if(  ($value->idModulo==$val->idModulo  && $val->permisos=='1')  ){
 					?>
 						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]" checked value="<?=$value->idModulo ?>_1"> 
-						</td>
-
-						<?php
-						continue;
-						 }else{
-						 	?>
-						<td class="text-center">
-							 <input type="checkbox" id="" name="permis[]"  value="<?=$value->idModulo ?>_1"> 
+							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='1')?"checked":"")  ?> value="<?=$value->idModulo ?>_1"> 
 						</td>
 						<?
-						continue;
-						 }
+							}
+							// segundo opcion
+						if(  $value->idModulo==$val->idModulo  && $val->permisos=='2'){
 						?>
 						<td class="text-center">
 							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='2')?"checked":"")  ?> value="<?=$value->idModulo ?>_2"> 
 						</td>
+						<?
+							}
+							// segundo opcion
+						if(  $value->idModulo==$val->idModulo  && $val->permisos=='3'){						
+							
+						?>
 						<td class="text-center">
 							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='3')?"checked":"")  ?> value="<?=$value->idModulo ?>_3"> 
 						</td>
+						<?
+							}
+							// segundo opcion
+						if(  $value->idModulo==$val->idModulo  && $val->permisos=='4'){						
+							
+						?>						
 						<td class="text-center">
 							 <input type="checkbox" id="" name="permis[]" <?php  echo ( ($value->idModulo==$val->idModulo && $val->permisos=='4')?"checked":"")  ?> value="<?=$value->idModulo ?>_4"> 
 						</td>
-
+				<?php 
+					}
+				}
+				?>
 					</tr>
 			<?php 
 			
-		}
-		$limit = 0;
+		
 		// eso
 			}
 

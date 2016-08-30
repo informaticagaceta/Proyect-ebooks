@@ -56,7 +56,7 @@ class Permisos extends CI_Controller {
 				$data['permisos_own'] = $this->m_permiso->verPermisos(trim($datos['perfil']));
 
 			}else{
-				// aqui destripamos el array de permisos 
+				// aqui destripamos el array de permisos, (obtnemos el modulo y el permiso q posee un perfil)
 				foreach ($datos['permis'] as $value) {
 					$dati = explode("_", $value);
 					//echo $dati[0] . " - ". $datos['perfil']. " - ".$dati[1]."<br>";
@@ -65,6 +65,7 @@ class Permisos extends CI_Controller {
 				}
 
 			}
+			//  obtengo Todos los modulos y todos los roles que exiten
 			//$this->m_permiso->agregarPermisos( $datos['nombres'] ,$datos['url'] );
 			$data['allModulos'] = $this->m_modulo->allModulos();
 			$data['allRoles'] = $this->m_permiso->getRoles();
@@ -80,4 +81,5 @@ class Permisos extends CI_Controller {
 
 
 
-//  segundo castillo yoveda 986251088, 998670092
+
+

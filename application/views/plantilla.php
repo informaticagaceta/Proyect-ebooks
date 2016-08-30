@@ -115,7 +115,7 @@
 	   });
 	});
 
-II Pleno Jurisdiccional Extraordinario Penal 2016
+
 	
 </script>
 </body>
